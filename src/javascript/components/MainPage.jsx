@@ -1,11 +1,9 @@
 import React from 'react';
 
 function MainPage(props) {
-const {title} = props;
-console.log(title);
-
     return (
         <div id="MainPage">
+            <h1 className='mt-10 text-blue-600 text-3xl font-bold'>Main Page</h1>
         </div>
     );
 }
