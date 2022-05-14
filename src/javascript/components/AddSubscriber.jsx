@@ -7,7 +7,7 @@ const subscribe = async (e) => {
 
     try {
         const response = await axios.post(
-            'http://localhost:8080/subscribers',
+            `${process.env.REACT_APP_API_URL}/subscribers`,
             {
                 subscriberName,
                 subscriberMail

@@ -3,7 +3,7 @@ import axios from "axios";
 import { LANGUAGES_ARRAY } from "../utils/constants";
 
 const sendNewsletter = async (e) => {
-    const results = await axios.get('http://localhost:8080/subscribers/allMails');
+    const results = await axios.get(`${process.env.REACT_APP_API_URL}/subscribers/allMails`);
     const allMails = results.data.allMails;
     const button = e.target;
     const language = button.value;
@@ -16,7 +16,7 @@ const sendNewsletter = async (e) => {
             let receiverMail = allMails[i].subscriberMail;
             console.log(receiverMail)
             const response = await axios.post(
-                'http://localhost:8080/subscribers/sendNewsletter',
+                `${process.env.REACT_APP_API_URL}/subscribers/sendNewsletter`,
                 {
                     language,
                     senderName,
